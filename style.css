@@ -149,7 +149,7 @@ body {
   margin-top: 0.5rem;
 }
 
-/* ── MOD GRID: split layout (image | text) ── */
+
 .mod-grid {
   display: flex;
   flex-direction: column;
@@ -170,7 +170,7 @@ body {
   border-bottom: none;
 }
 
-/* Alternate: even cards flip — text left, image right */
+
 .mod-card:nth-child(even) {
   direction: rtl;
 }
@@ -219,6 +219,48 @@ body {
   color: var(--muted);
   line-height: 1.75;
   font-weight: 300;
+}
+
+
+.mod-card--banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-template-columns: unset;
+  padding: 2.5rem 2rem;
+  gap: 1.25rem;
+}
+
+.mod-card--banner .mod-card-img {
+  padding: 0;
+  width: 100%;
+  max-width: 720px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.mod-card--banner .mod-card-img img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: unset;
+  object-fit: unset;
+  border-radius: 16px;
+}
+
+.mod-card--banner .mod-card-body {
+  padding: 0;
+  text-align: center;
+  align-items: center;
+}
+
+.mod-card--banner .mod-card-body h3 {
+  font-size: 1rem;
+}
+
+
+.mod-card--banner,
+.mod-card--banner > * {
+  direction: ltr;
 }
 
 /* ── ABOUT ── */
@@ -333,10 +375,16 @@ body {
 }
 
 .footer-logo {
-  font-size: 0.75rem;
-  color: var(--gold);
-  margin-bottom: 0.8rem;
-  letter-spacing: 0.04em;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-logo-img {
+  height: 32px;
+  width: auto;
+  display: block;
+  opacity: 0.85;
 }
 
 .footer-note {
@@ -378,15 +426,15 @@ body {
     background: rgba(28,18,9,0.98);
     padding: 1.2rem 2rem;
     gap: 1rem;
-    border-bottom: 3px solid var(--red); /* Disamakan dengan border navbar */
-    box-shadow: 0 8px 16px rgba(0,0,0,0.4); /* Menambah bayangan agar menu lebih menonjol */
+    border-bottom: 3px solid var(--red);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.4); 
     z-index: 99;
   }
-  /* .navbar { position: relative; } dihapus agar navbar tetap sticky */
+  
   
   .nav-hamburger { display: block; }
 
-  /* 2. Hero Section (Tombol jadi vertikal) */
+  
   .hero-cta-bar {
     flex-direction: column;
     padding: 1.2rem 1rem;
@@ -398,18 +446,17 @@ body {
     padding: 1rem;
   }
 
-  /* 3. Mod Cards (Merapatkan jarak) */
+  
   .mod-card { padding: 1.5rem 0; }
   .mod-card-img { padding: 0 0.5rem 1rem; }
   .mod-card-body { padding: 0 0.8rem; }
-  .mod-card-body h3 { font-size: 0.75rem; } /* Font dikecilkan sedikit agar tidak terpotong */
-
+  .mod-card-body h3 { font-size: 0.75rem; } 
   /* 4. Spacing Global */
   .features { padding: 2.5rem 1rem; }
   .about { padding: 3rem 1.5rem; }
   .download { padding: 3rem 1.5rem; }
 
-  /* 5. Download Buttons (Vertikal dan responsif) */
+  
   .download-buttons {
     flex-direction: column;
     gap: 1rem;
