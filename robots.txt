@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vanilla-perfected.vercel.app/sitemap.xml
